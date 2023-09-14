@@ -1,19 +1,21 @@
 import React from 'react'
 import { formulario } from '../hooks/formulario'
-export const Formulary = (form) => {
-    
+export const Formulary = () => {
+  const {data, handleSubmit} = formulario({})
+  console.log(data)
   return (
-    
+
     <div>
-      <form action={formulario(form)}>
-        <input type="text"></input>
-        <input type="submit" value="Submit"></input>
-        
-        {console.log(formulario.valorDefecto)}
+      <form onSubmit={handleSubmit} >
+        <input type="text" name='busqueda'></input>
+        <input type="submit" ></input>
+
+
+
       </form>
-      
+
     </div>
-    
+
   )
-  
+
 }
