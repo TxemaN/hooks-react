@@ -17,10 +17,10 @@ export const usePexels = (categoria) => {
 
                 try {
                     const data = await cogerImagen(categoria);
-console.log(data)
+                    console.log(data)
 
                     if (data) {
-                        
+
                         setState({
                             data: data.fotos,
                             loading: false,
