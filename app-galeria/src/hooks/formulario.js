@@ -1,33 +1,33 @@
-import { useState } from "react";
-export const formulario = (valorDefecto = {}) => {
+import { useState, useEffect } from "react";
+export const formulario = (valorDefecto, onAddCategoria) => {
     const [data, setData] = useState(valorDefecto)
 
-    const serialForms = (form) => {
-
-        const dataForm = new FormData(form)
-
-        const dataObj = {}
-
-        for (let [llave, valor] of dataForm) {
-
-            dataObj[llave] = valor
-
-        }
-
-        return dataObj
-    }
-
+    
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setData({
+          ...value,
+          [name]: value,
+        });
+      };
     const handleSubmit = (ev) => {
 
         ev.preventDefault()
-        const form = ev.target
-        const dataObj = serialForms(form)
-        setData(dataObj)
+        if (data.categoria) {
+            onAddCategoria(data.categoria);
+            reset();
+           }
 
     }
+
+    const reset = () => {
+        setData(valorDefecto);
+      };
     return {
         data,
-        handleSubmit
+        handleSubmit,
+        handleChange,
+        reset
     }
 
 
