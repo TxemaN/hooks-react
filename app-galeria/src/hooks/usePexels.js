@@ -27,7 +27,7 @@ export const usePexels = (categoria) => {
                             error: null
                         });
                     } else {
-                        throw new Error('No se encontraron fotos');
+                        throw new Error('No saca las fotos');
                     }
 
                 } catch (error) {

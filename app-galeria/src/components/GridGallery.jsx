@@ -11,7 +11,7 @@ export const GridGallery = ({categoria}) => {
     {loading && <p>Cargando...</p>}
       {error && <p>Error: {error}</p>}
 
-      <div className="row">
+      <div>
 {!loading && !error && fotos && fotos.map(picture =>(
 <div key={picture.id}>
     <CardImg  picture={picture} />

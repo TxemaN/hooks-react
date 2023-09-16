@@ -15,7 +15,7 @@ export const Formulary = ({ onAddCategoria }) => {
           type="text"
           name="categoria"
           id="categoria"
-          placeholder="Añadir categoría"
+          placeholder="Buscar categoría"
           value={data.categoria}
           onChange={handleChange}
         />
