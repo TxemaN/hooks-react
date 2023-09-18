@@ -1,17 +1,18 @@
 import React from 'react'
 
-export const CardImg = ({picture}) => {
-  const { id, photographer, photographer_url, url, alt } = picture;
+export const CardImg = ({ photographer, photographer_url, url, alt }) => {
+
   return (
     <article>
-         <div>
-                <img src={url} alt={alt}  />
-                <div >
-                    <h5 >Author: {photographer}</h5>
-                    <p >Perfil del <a href={photographer_url}>Author</a></p>
-                    <p>{id}</p>
-                </div>
-            </div>
+      <div>
+        <img className= "img-fluid" src={url} alt={alt} />
+      </div>
+      <div >
+        <h3 >Author: {photographer}</h3>
+        <p >Perfil del <a href={photographer_url}>Author</a></p>
+
+      </div>
+
     </article>
   )
 }

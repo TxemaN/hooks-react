@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <header className='p-5 bg-dark text-light text-center'>
-   <p className='display-3'>AGGGG</p>
+   <p className='display-3'>EJERCICIO PEXELS</p>
    </header>
    <main className='container my-5 '>
    <Buscadorr/>

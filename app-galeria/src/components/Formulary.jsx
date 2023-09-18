@@ -9,7 +9,7 @@ export const Formulary = ({ onAddCategoria }) => {
 
   return (
 
-    <nav className='className="vh-100 d-flex justify-content-center align-items-center'>
+    <div className='d-flex justify-content-center align-items-center'>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -21,7 +21,7 @@ export const Formulary = ({ onAddCategoria }) => {
         />
         <input type="submit" value="Añadir" />
       </form>
-    </nav>
+    </div>
 
   )
 
