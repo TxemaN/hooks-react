@@ -1,8 +1,8 @@
 
-export const pexelHelper = async (url) => {
+export const pexelHelper = async (url2) => {
 
     try {
-        const resp = await fetch(`${url}`, {
+        const resp = await fetch(`${url2}`, {
             headers: {
                 'Authorization': 'mumVi2YGbikluEcNGTCofbZyeHkJZIPSTUpGcmqVe9173qGbfmzYGzCe',
             }
@@ -10,7 +10,7 @@ export const pexelHelper = async (url) => {
        console.log(resp)
         if (resp.ok) {
             const {photos} = await resp.json()
-            
+            console.log(photos)
             return {
                 ok: true,
                 photos

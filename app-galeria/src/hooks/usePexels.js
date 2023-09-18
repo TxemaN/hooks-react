@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { cogerImagen } from "../helpers/cogerImagen";
-export const usePexels = (categoria) => {
+
+export const usePexels = (categoria, page) => {
     const [state, setState] = useState({
         data: null,
         loading: true,
@@ -14,7 +15,7 @@ export const usePexels = (categoria) => {
            
 
             try {
-                const data = await cogerImagen(categoria);
+                const data = await cogerImagen(categoria, page);
                 console.log(data)
 
                 if (data) {
@@ -41,7 +42,7 @@ export const usePexels = (categoria) => {
         
 
         pillarFotos();
-    }, [categoria]);
+    }, [categoria, page]);
 
     return state;
 };

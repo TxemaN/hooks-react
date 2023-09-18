@@ -1,26 +1,34 @@
 
 import React, { useState } from 'react'
 import { cogerImagen } from "../helpers/cogerImagen";
-export const Boton = (valor) => {
-   const [pagina, cambiarPagina] = useState(valor)
-    const handleAvanzar = (ev) => {
+import { usePexels } from '../hooks/usePexels';
+
+
+export const Boton = (categoria) => {
+    const [pagina, cambiarPagina] = useState(1)
+    
+    const handleRetroceder = () => {
+
+        cambiarPagina(pagina - 1)
+       
+        cogerImagen(categoria.categoria, pagina)
+       
+    }
+    const handleAvanzar = () => {
+
+        cambiarPagina(pagina + 1)
+        cogerImagen(categoria.categoria, pagina)
         
-        cambiarPagina(pagina+1)
-        cogerImagen(pagina+1)
-      
-         
-         
-     }
-     const handleRetroceder= (ev) => {
         
-        cambiarPagina(pagina-1)
-        cogerImagen(pagina-1)
-          
-           
-       }
-  return (
-    <><button onClick={handleAvanzar}>  ANTERIOR </button>
-    <button onClick={handleRetroceder}>  SIGUIENTE </button>
-    </>
-  )
+
+
+
+
+    }
+
+    return (
+        <><button onClick={handleRetroceder}>  ANTERIOR </button>
+            <button onClick={handleAvanzar}>  SIGUIENTE </button>
+        </>
+    )
 }
